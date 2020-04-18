@@ -6,7 +6,7 @@ import {
     GithubChoiceValue
 } from '../models/answer-choice'
 
-export const githubQuestionsList = async (): Promise<Answer> => {
+export const gitlabQuestionsList = async (): Promise<Answer> => {
     const listOfFiles: Choice[] = [
         { name: 'Merge request', value: GitLabChoiceValue.MERGE_REQUEST }
     ]
@@ -15,7 +15,7 @@ export const githubQuestionsList = async (): Promise<Answer> => {
         {
             name: 'files',
             type: 'list',
-            message: 'Which Github files do you want to generate',
+            message: 'Which Gitlab files do you want to generate',
             choices: listOfFiles
         }
     ])

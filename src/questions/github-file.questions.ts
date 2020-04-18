@@ -15,8 +15,13 @@ export const githubQuestionsList = async (): Promise<Answer> => {
         {
             name: 'files',
             type: 'list',
-            message: 'Which Gitlab files do you want to generate',
+            message: 'Which Github files do you want to generate',
             choices: listOfFiles
+        },
+        {
+            name: 'answerMe',
+            type: 'input',
+            message: 'type something to see what happens!'
         }
     ])
 }

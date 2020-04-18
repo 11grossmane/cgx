@@ -1,6 +1,7 @@
 export interface Answer {
     files: Object
     provider: ProviderChoiceValue
+    answerMe: string
 }
 
 export interface Choice {

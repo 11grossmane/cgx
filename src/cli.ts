@@ -1,4 +1,4 @@
-import { injectable, inject } from 'inversify'
+import chalk from 'chalk'
 import { FeatureRequest } from './templates/github/feature-request.template'
 import {
     Answer,
@@ -27,6 +27,8 @@ export class CLI {
 
     async githubActions(): Promise<any> {
         let githubAnswer: Answer = await GithubQuestions.githubQuestionsList()
+
+        console.log(chalk.yellow(githubAnswer.answerMe))
 
         switch (githubAnswer.files) {
             case GithubChoiceValue.FEATURE_REQUEST:
