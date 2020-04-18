@@ -3,16 +3,13 @@ import { injectable, inject } from 'inversify'
 import { GithubPath } from '../../models/path'
 import { FileName } from '../../models/filename'
 
-@injectable()
 export class FeatureRequest {
     private fileName = FileName.FEATURE_REQUEST
     private hasPath = true
     private pathOfFile = GithubPath.ISSUE_TEMPLATE
 
     //automatically does this.defaultTemplate = defaultTemplate
-    constructor(
-        @inject('DefaultTemplate') private defaultTemplate: DefaultTemplate
-    ) {}
+    constructor(private defaultTemplate: DefaultTemplate) {}
 
     generateFile(): void {
         this.defaultTemplate.generateFile(
@@ -22,7 +19,7 @@ export class FeatureRequest {
             this.pathOfFile
         )
     }
-    private fileContent(): string {
+    fileContent(): string {
         return `
       ---
        name:Feature request
