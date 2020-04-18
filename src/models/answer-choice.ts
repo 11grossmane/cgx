@@ -21,3 +21,14 @@ export enum ProviderChoiceValue {
     GITHUB = 'Github',
     GITLAB = 'Gitlab'
 }
+
+const obj = {
+    name: 'yohan',
+    answers: <Answer[]>[
+        {
+            files: {},
+            answerMe: 'hi there!',
+            provider: ProviderChoiceValue.GITHUB
+        }
+    ]
+}
