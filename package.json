@@ -8,6 +8,7 @@
     },
     "scripts": {
         "start": "nodemon -I --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+        "start-ts": "ts-node src/index.ts",
         "clean:some": "rm -rf ./lib ./docs",
         "create": "npm run build && npm run global",
         "build": "npm run clean:some && tsc --pretty -p .",
@@ -28,6 +29,7 @@
         "inquirer": "^7.1.0",
         "inversify": "^5.0.1",
         "kleur": "^3.0.3",
+        "open": "^7.0.3",
         "reflect-metadata": "^0.1.13",
         "tslib": "^1.11.1"
     },

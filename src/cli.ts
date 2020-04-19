@@ -11,6 +11,7 @@ import {
     ProviderQuestions,
     GitLabQuestions
 } from './questions'
+import open from 'open'
 
 export class CLI {
     constructor(private featureRequest: FeatureRequest) {
@@ -29,6 +30,9 @@ export class CLI {
         let githubAnswer: Answer = await GithubQuestions.githubQuestionsList()
 
         console.log(chalk.yellow(githubAnswer.answerMe))
+        await open(
+            'https://github.com/login/oauth/authorize?client_id=f46db0bda3efb12ae93e&login=blabla'
+        )
 
         switch (githubAnswer.files) {
             case GithubChoiceValue.FEATURE_REQUEST:
